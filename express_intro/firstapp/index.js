@@ -14,6 +14,15 @@ app.get("/", (req,res)=>{
     res.send("This is the home page")
 })
 
+app.get("/r/:postID/:subreddit", (req,res)=>{
+    const {postID, subreddit} =req.params;
+    res.send(`<h1> Browsing the ${postID} and  viewing the  ${subreddit} subreddit </h1>`)
+})
+
+
+
+
+
 app.get("/cats", (req,res)=>{
 res.send("Meow")
 })
