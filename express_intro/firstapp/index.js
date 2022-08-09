@@ -14,10 +14,10 @@ app.get("/", (req,res)=>{
     res.send("This is the home page")
 })
 
-app.get("/r/:postID/:subreddit", (req,res)=>{
-    const {postID, subreddit} =req.params;
-    res.send(`<h1> Browsing the ${postID} and  viewing the  ${subreddit} subreddit </h1>`)
-})
+// app.get("/r/:postID/:subreddit", (req,res)=>{
+//     const {postID, subreddit} =req.params;
+//     res.send(`<h1> Browsing the ${postID} and  viewing the  ${subreddit} subreddit </h1>`)
+// })
 
 
 
@@ -36,6 +36,16 @@ app.post("/cats",(req,res)=>{
 app.get("/dogs",(req,res)=>{
     res.send("Woof")
 })
+
+//working with query strings
+app.get("/search", (req,res)=>{
+  const{q} =req.query;
+  if(!q){
+    res.send("nothing found if nothing is searched")
+  }
+  res.send(`<h1> you searched for ${q}</h1>`)
+})
+
 
 
 
