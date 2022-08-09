@@ -11,7 +11,7 @@ const app = express();
 
 
 app.get("/", (req,res)=>{
-    res.send("This is the home page")
+    res.send("Welcome to the home pages!!! why dont its reflect to the browser still")
 })
 
 // app.get("/r/:postID/:subreddit", (req,res)=>{
