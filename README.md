@@ -18,3 +18,9 @@ It will install nodemon globally
 
 ## Creating Dynamic HTML with Templates
 - what is Templating?
+- Confuring Express for EJS
+- Passing Data to Templates
+- Serving Static Assets
+- Creating Partials
+- EJS Loops & Conditionals
+
