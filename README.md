@@ -24,3 +24,7 @@ It will install nodemon globally
 - Creating Partials
 - EJS Loops & Conditionals
 
+## confuring express for ejs
+```
+npm i ejs
+```
