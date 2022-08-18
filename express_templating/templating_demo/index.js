@@ -4,6 +4,8 @@ const app= express()
 
 const path = require("path")
 
+const redditData= require("./data.json")
+
 //setting the view directory
 app.set("view enginer", "ejs")
 app.set("views", path.join(__dirname, "/views"))
@@ -19,9 +21,15 @@ app.get("/cats", (req,res)=>{
     res.render("cats.ejs", {cats})
 })
 
+// a more complext subreddit demo by using fake data from a json file 
 app.get("/r/:subreddit", (req,res)=>{
     const {subreddit} =req.params;
-    res.render("subreddit.ejs", {subreddit})
+    const data = redditData[subreddit]
+    if(data) {
+    res.render("subreddit.ejs", {...data})
+    }else{
+        res.render("notfound.ejs", {subreddit})
+    }
 })
 
 app.get("/rand", (req,res)=>{
