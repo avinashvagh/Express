@@ -6,6 +6,7 @@ const path = require("path")
 
 const redditData= require("./data.json")
 
+// serving static assets in Express through absolut path, it means yo can access the static assets from the root of the project
 app.use(express.static(path.join(__dirname, "public")))
 
 
