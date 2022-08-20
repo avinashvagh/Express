@@ -3,6 +3,12 @@
 const express= require("express")
 const app=express()
 
+//  you need to include this line 
+app.use(express.urlencoded({extended:true}))
+// if you use json to retrive data through json in postman than you need to include it 
+app.use(express.json())
+
+
 
 app.get("/tacos", (req, res)=>{
     res.send("GET/tacos response")
@@ -10,7 +16,9 @@ app.get("/tacos", (req, res)=>{
 })
 
 app.post("/tacos", (req,res)=>{
-    res.send("POST/tacos response")
+    // parsing the request body 
+    const {meat,qty} =req.body
+    res.send(`Ok, here are your ${qty} ${meat} tacos`)
 })
 
 
