@@ -11,7 +11,10 @@
         <ul>
             <!-- RESTful comment index  -->
             <%for(let c of comments) {%>
-                <li><%=c.comment%>- <b><%=c.username %></b>%></li>
+                <li><%=c.comment%>- <b><%=c.username %></b>%>
+                    <!-- show comments  -->
+                <a href="/comments/<%= c.id %>">details</a>
+                </li>
             <%} %>
         </ul>
         <a href="/comments/new">New Comment</a>
